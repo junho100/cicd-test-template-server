@@ -4,7 +4,6 @@ COPY gradlew .
 COPY gradle gradle
 COPY build.gradle .
 COPY settings.gradle .
-COPY gradle.properties .
 COPY src src
 RUN chmod +x ./gradlew
 RUN ./gradlew bootJar
