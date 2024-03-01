@@ -22,11 +22,11 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_IMAGE_NAME }}
-          build-args:
-            - db_host: ${{ secrets.DB_HOST }}
-            - db_name: ${{ secrets.DB_NAME }}
-            - db_user: ${{ secrets.DB_USERNAME }}
-            - db_password: ${{ secrets.DB_PASSWORD }}
+          build-args: |
+            db_host=${{ secrets.DB_HOST }}
+            db_name=${{ secrets.DB_NAME }}
+            db_user=${{ secrets.DB_USERNAME }}
+            db_password=${{ secrets.DB_PASSWORD }}
   deploy:
     runs-on: ubuntu-latest
     steps:
